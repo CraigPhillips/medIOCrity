@@ -17,6 +17,19 @@
   },
   "homepage": "https://github.com/CraigPhillips/medIOCrity#readme",
   "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "./src/**/*.js",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
     "transform": {}
   },
   "keywords": [],
@@ -27,8 +40,9 @@
     "url": "git+https://github.com/CraigPhillips/medIOCrity.git"
   },
   "scripts": {
+    "check-all": "npm run lint && npm run coverage && echo && echo '\\033[0;32m✓\\033[0m All checks passed' || (echo && echo '\\033[0;31mX\\033[0m Checks have failed')",
     "coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
-    "lint": "npx eslint src",
+    "lint": "npx eslint --max-warnings 0 src",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "type": "module",
