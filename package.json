@@ -6,6 +6,13 @@
   "description": "inversion of control/dependency injection for Node",
   "devDependencies": {
     "@types/jest": "^29.5.12",
+    "eslint": "^8.57.0",
+    "eslint-config-semistandard": "^17.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest": "^27.9.0",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
     "jest": "^29.7.0"
   },
   "homepage": "https://github.com/CraigPhillips/medIOCrity#readme",
@@ -21,6 +28,7 @@
   },
   "scripts": {
     "coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+    "lint": "npx eslint src",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "type": "module",
